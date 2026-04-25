@@ -1,0 +1,423 @@
+<div id="applyModal" class="apply-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="applyModalTitle">
+  <div class="apply-modal-dialog">
+    <div class="apply-modal-grid">
+      <aside class="apply-modal-side">
+        <h3 class="apply-side-title">How CareerChoice360 helps you in admission</h3>
+        <div class="apply-feature-grid">
+          <div class="apply-feature-card"><i class="fas fa-book-open"></i><span>Brochure Details</span></div>
+          <div class="apply-feature-card"><i class="fas fa-coins"></i><span>Check Detailed Fees</span></div>
+          <div class="apply-feature-card"><i class="fas fa-bullseye"></i><span>Shortlist & Apply</span></div>
+          <div class="apply-feature-card"><i class="fas fa-phone-alt"></i><span>24/7 Counseling</span></div>
+          <div class="apply-feature-card"><i class="fas fa-graduation-cap"></i><span>Scholarships</span></div>
+          <div class="apply-feature-card"><i class="fas fa-clock"></i><span>Application Deadlines</span></div>
+        </div>
+      </aside>
+
+      <section class="apply-modal-form-wrap">
+        <div class="apply-modal-header">
+          <div>
+            <h3 id="applyModalTitle" class="apply-modal-title">Register Now To Apply</h3>
+            <p class="apply-modal-subtitle">Get details and latest updates</p>
+          </div>
+          <button type="button" id="closeApplyModal" class="apply-modal-close" aria-label="Close apply form">&times;</button>
+        </div>
+
+        <form id="applyModalForm" class="apply-form">
+          <div class="apply-form-grid">
+            <label class="apply-field">
+              <i class="fas fa-user"></i>
+              <input type="text" id="modalFullName" placeholder="Full Name *" required>
+            </label>
+            <label class="apply-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" id="modalEmail" placeholder="Email Address *" required>
+            </label>
+            <label class="apply-field">
+              <i class="fas fa-phone-alt"></i>
+              <input type="tel" id="modalPhone" placeholder="Mobile Number *" required>
+            </label>
+            <label class="apply-field">
+              <i class="fas fa-map-marker-alt"></i>
+              <select id="modalState" required>
+                <option value="">Select State *</option>
+                <option>Delhi NCR</option>
+                <option>Uttar Pradesh</option>
+                <option>Haryana</option>
+                <option>Maharashtra</option>
+                <option>Karnataka</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label class="apply-field apply-field-full">
+              <i class="fas fa-book"></i>
+              <select id="modalCourse" required>
+                <option>B.Tech AI & ML</option>
+                <option>MBA Business Analytics</option>
+                <option>Data Science & AI</option>
+                <option>Digital Marketing</option>
+                <option>General Application</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="apply-terms">
+            <input type="checkbox" id="modalConsent" required>
+            <span>By submitting this form, you accept our terms of use.</span>
+          </label>
+
+          <button type="submit" class="apply-submit-btn"><i class="fas fa-paper-plane"></i> Submit</button>
+          <div id="modalStatus" class="modal-status"></div>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>
+
+<style id="career-modal-style">
+  body.modal-open {
+    overflow: hidden;
+  }
+
+  .apply-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 24, 44, 0.58);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    z-index: 1200;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+  }
+
+  .apply-modal.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .apply-modal-dialog {
+    width: min(1180px, 100%);
+    max-height: 94vh;
+    overflow: auto;
+    border-radius: 18px;
+    border: 1px solid #d7e0ee;
+    background: #f0f4fb;
+    box-shadow: 0 24px 56px rgba(10, 25, 54, 0.35);
+  }
+
+  .apply-modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .apply-modal-side {
+    padding: 26px;
+    background: #e8eef8;
+  }
+
+  .apply-side-title {
+    font-size: clamp(1.25rem, 2vw, 2rem);
+    color: #1f2a3c;
+    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: 18px;
+  }
+
+  .apply-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .apply-feature-card {
+    min-height: 112px;
+    border-radius: 14px;
+    border: 1px solid #d4dfef;
+    background: #f7f9fd;
+    color: #2c3a4d;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    padding: 10px;
+  }
+
+  .apply-feature-card i {
+    color: #2e64d8;
+    font-size: 1.5rem;
+  }
+
+  .apply-modal-form-wrap {
+    background: #fff;
+    padding: 26px;
+  }
+
+  .apply-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .apply-modal-title {
+    color: #2853c7;
+    font-size: clamp(1.7rem, 2.3vw, 3rem);
+    margin: 0 0 4px;
+    line-height: 1.1;
+    font-weight: 800;
+  }
+
+  .apply-modal-subtitle {
+    margin: 0;
+    color: #556277;
+    font-size: clamp(1rem, 1.3vw, 1.65rem);
+  }
+
+  .apply-modal-close {
+    border: none;
+    background: #edf2fb;
+    color: #2e64d8;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .apply-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 18px;
+  }
+
+  .apply-field {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-bottom: 2px solid #cad4e3;
+    padding: 8px 0;
+  }
+
+  .apply-field i {
+    width: 18px;
+    text-align: center;
+    color: #3b82f6;
+    flex-shrink: 0;
+  }
+
+  .apply-field input,
+  .apply-field select {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #2f3a4a;
+    font-family: inherit;
+    font-size: 1.05rem;
+  }
+
+  .apply-field-full {
+    grid-column: 1 / -1;
+  }
+
+  .apply-terms {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 18px;
+    color: #4a5668;
+  }
+
+  .apply-submit-btn {
+    width: 100%;
+    margin-top: 14px;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: #2e64d8;
+    color: #fff;
+    font-size: 1.08rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(46, 100, 216, 0.26);
+  }
+
+  .apply-submit-btn:hover {
+    background: #1f53c1;
+  }
+
+  .modal-status {
+    min-height: 22px;
+    margin-top: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 960px) {
+    .apply-modal-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .apply-feature-card {
+      min-height: 96px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .apply-form-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .apply-modal-side,
+    .apply-modal-form-wrap {
+      padding: 16px;
+    }
+
+    .apply-feature-grid {
+      gap: 10px;
+    }
+
+    .apply-feature-card {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<script id="career-modal-script">
+  (function () {
+    window.bindCareerModal = function bindCareerModal() {
+      var applyModal = document.getElementById('applyModal');
+      if (!applyModal || applyModal.dataset.bound === 'true') return;
+      applyModal.dataset.bound = 'true';
+
+      var closeApplyModalBtn = document.getElementById('closeApplyModal');
+      var applyModalForm = document.getElementById('applyModalForm');
+      var modalStatus = document.getElementById('modalStatus');
+      var modalCourseInput = document.getElementById('modalCourse');
+      var modalStateInput = document.getElementById('modalState');
+      var modalConsentInput = document.getElementById('modalConsent');
+      var modalNameInput = document.getElementById('modalFullName');
+      var modalEmailInput = document.getElementById('modalEmail');
+      var modalPhoneInput = document.getElementById('modalPhone');
+
+      var openApplyModal = function (courseName) {
+        if (modalCourseInput) {
+          var targetCourse = courseName || 'General Application';
+          var options = Array.prototype.slice.call(modalCourseInput.options || []);
+          var matching = options.find(function (option) {
+            return option.value === targetCourse || option.text === targetCourse;
+          });
+          modalCourseInput.value = matching ? matching.value : 'General Application';
+        }
+
+        if (modalStatus) {
+          modalStatus.textContent = '';
+        }
+
+        applyModal.classList.add('show');
+        applyModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+
+        if (modalNameInput) {
+          modalNameInput.focus();
+        }
+      };
+
+      var closeApplyModal = function () {
+        applyModal.classList.remove('show');
+        applyModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+      };
+
+      var applyTriggers = document.querySelectorAll('.open-apply-modal');
+      applyTriggers.forEach(function (trigger) {
+        if (trigger.dataset.modalBound === 'true') return;
+        trigger.dataset.modalBound = 'true';
+        trigger.addEventListener('click', function (e) {
+          e.preventDefault();
+          var courseName = trigger.getAttribute('data-course');
+          openApplyModal(courseName);
+        });
+      });
+
+      if (closeApplyModalBtn) {
+        closeApplyModalBtn.addEventListener('click', closeApplyModal);
+      }
+
+      applyModal.addEventListener('click', function (e) {
+        if (e.target === applyModal) {
+          closeApplyModal();
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && applyModal.classList.contains('show')) {
+          closeApplyModal();
+        }
+      });
+
+      if (applyModalForm) {
+        applyModalForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          if (!modalStatus || !modalNameInput || !modalEmailInput || !modalPhoneInput || !modalStateInput || !modalCourseInput || !modalConsentInput) {
+            return;
+          }
+
+          var name = modalNameInput.value.trim();
+          var email = modalEmailInput.value.trim();
+          var phone = modalPhoneInput.value.trim();
+
+          modalStatus.style.color = '#b91c1c';
+          modalStatus.textContent = '';
+
+          if (name.length < 2) {
+            modalStatus.textContent = 'Please enter a valid full name.';
+            return;
+          }
+
+          var emailRegex = /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/;
+          if (!emailRegex.test(email)) {
+            modalStatus.textContent = 'Please provide a valid email address.';
+            return;
+          }
+
+          var phoneRegex = /^[0-9]{10}$/;
+          if (!phoneRegex.test(phone)) {
+            modalStatus.textContent = 'Mobile number must be exactly 10 digits.';
+            return;
+          }
+
+          if (!modalStateInput.value) {
+            modalStatus.textContent = 'Please select your state.';
+            return;
+          }
+
+          if (!modalCourseInput.value) {
+            modalStatus.textContent = 'Please select your course.';
+            return;
+          }
+
+          if (!modalConsentInput.checked) {
+            modalStatus.textContent = 'Please accept the terms to continue.';
+            return;
+          }
+
+          modalStatus.style.color = '#2563eb';
+          modalStatus.textContent = 'Application submitted successfully. Our team will contact you soon.';
+
+          applyModalForm.reset();
+          setTimeout(closeApplyModal, 900);
+        });
+      }
+    };
+  })();
+</script>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>CareerChoice360 | Future-Focused Education</title>
+  <link rel="icon" href="assets/career360_logo.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="container nav-container">
+    <div class="logo">
+      <!-- <h1>CareerChoice360</h1> -->
+      <img src="assets/career360_logo.jpg" alt="CareerChoice360 Logo" class="logo-img">
+    </div>
+    <div class="mobile-toggle" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#enquiry" class="open-apply-modal" data-course="General Application">Enquiry</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#enquiry" class="btn-secondary nav-apply-btn apply-now-btn open-apply-modal" data-course="General Application" style="padding: 8px 20px;">Apply Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Shape Tomorrow, Today <br> at CareerChoice360</h1>
+      <p>Industry aligned programs, global exposure, and a legacy of excellence. Your journey to a thriving career begins here.</p>
+      <div class="btn-group">
+        <a href="#enquiry" class="btn-primary open-apply-modal" data-course="General Application"><i class="fas fa-graduation-cap"></i> Enquire Now</a>
+        <a href="#courses" class="btn-outline-light">Explore Courses <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <h2 class="section-title">About CareerChoice360</h2>
+        <div style="height: 4px; width: 70px; background: #f4b942; margin: 18px 0 24px 0;"></div>
+        <p>Established with the vision to empower future leaders, CareerChoice360 blends academic rigor with industry immersions. Our state-of-the-art campus, mentorship from domain experts, and strong placement record make us a preferred destination for higher education.</p>
+        <p>We focus on holistic development — from cutting-edge specializations to soft skills and entrepreneurship. Over 15,000+ alumni drive innovation across the globe.</p>
+        <a href="#enquiry" class="btn-secondary open-apply-modal" data-course="General Application" style="margin-top: 20px;"><i class="fas fa-user-plus"></i> Join Our Community</a>
+      </div>
+      <div class="stats">
+        <div class="stat-card">
+          <div class="stat-number">98%</div>
+          <div>Placement Rate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">45+</div>
+          <div>Recruiters</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">120+</div>
+          <div>Expert Faculty</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Courses / Specializations Section -->
+<section id="courses" class="courses">
+  <div class="container">
+    <div style="text-align: center;">
+      <h2 class="section-title">Flagship Programs & Specializations</h2>
+      <div class="section-subtitle">Choose your path to success with future-focused curriculum</div>
+    </div>
+    <div class="courses-grid">
+      <div class="course-card">
+        <div class="course-icon"><i class="fas fa-laptop-code"></i></div>
+        <h3>B.Tech (AI & ML)</h3>
+        <p>Advanced specialisation in Artificial Intelligence, Data Engineering, and Computer Vision. Industry projects & research tracks.</p>
+        <button class="course-btn cta-course apply-now-btn open-apply-modal" data-course="B.Tech AI & ML">Apply Now <i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="course-card">
+        <div class="course-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>MBA – Business Analytics</h3>
+        <p>Strategic leadership, data-driven decision making, and global immersion. Dual specialization options in Finance & Marketing.</p>
+        <button class="course-btn cta-course apply-now-btn open-apply-modal" data-course="MBA Business Analytics">Apply Now <i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="course-card">
+        <div class="course-icon"><i class="fas fa-database"></i></div>
+        <h3>Data Science & AI</h3>
+        <p>PG Diploma / Master’s track with Python, MLops, Big Data. Hands-on capstone projects from industry leaders.</p>
+        <button class="course-btn cta-course apply-now-btn open-apply-modal" data-course="Data Science & AI">Apply Now <i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="course-card">
+        <div class="course-icon"><i class="fas fa-bullhorn"></i></div>
+        <h3>Digital Marketing & Strategy</h3>
+        <p>SEO, Performance Marketing, Social Media Analytics with certifications from Google & HubSpot. Real-world campaigns.</p>
+        <button class="course-btn cta-course apply-now-btn open-apply-modal" data-course="Digital Marketing">Apply Now <i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="#enquiry" class="btn-primary open-apply-modal" data-course="General Application" style="background: #2563eb; color:white;"><i class="fas fa-calendar-alt"></i> Request Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQs Section -->
+<section id="faqs" class="faq-section">
+  <div class="container">
+    <div style="text-align: center;">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Everything you need to know before you apply</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button type="button" class="faq-question" aria-expanded="false">
+          What is the application process at CareerChoice360?
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          You can apply online by submitting your basic details and preferred program. Our admissions team reviews your application and shares the next steps, including counselling and document verification.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-question" aria-expanded="false">
+          Are scholarships available for students?
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          Yes, merit-based and need-based scholarship options are available. Eligibility depends on academic performance, entrance scores, and specific program criteria.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-question" aria-expanded="false">
+          Can I talk to a counsellor before applying?
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          Absolutely. You can request a free consultation and our counsellor will guide you on course selection, career outcomes, and admission timelines.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-question" aria-expanded="false">
+          How soon will I receive a response after applying?
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          Most applicants receive a response within 24-48 hours. During peak admission periods, it may take slightly longer.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Additional CTA Section (Call-to-action buttons block) -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Ready to take the leap toward your dream career?</h2>
+    <div class="cta-buttons">
+      <a href="#enquiry" class="btn-secondary nav-apply-btn apply-now-btn open-apply-modal" data-course="General Application">Apply Now <i class="fas fa-arrow-right"></i></a>
+      <a href="#courses" class="btn-outline-light" style="border-color:white;">View All Programs</a>
+      <a href="tel:+918800854923" class="btn-outline-light" style="border-color:white;"><i class="fas fa-phone-alt"></i> +91 8800854923</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h3>CareerChoice360</h3>
+        <p>Empowering careers since 2002<br>C-30, Sector 2, Noida</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="#about" style="color:#c7d8f4; text-decoration:none;">About Us</a><br>
+        <a href="#courses" style="color:#c7d8f4; text-decoration:none;">Academics</a><br>
+        <a href="#enquiry" class="open-apply-modal" data-course="General Application" style="color:#c7d8f4; text-decoration:none;">Admissions</a></p>
+      </div>
+      <div class="social-icons">
+        <h4>Connect</h4>
+        <a href="https://www.instagram.com/careerchoice360_official/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/careerchoice360/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/company/career-choice-360/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.youtube.com/@Careerchoice360-3" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+        <p style="margin-top:12px"><a href="mailto:info@careerchoice360.in" style="color:#c7d8f4; text-decoration:none;"><i class="fas fa-envelope"></i> info@careerchoice360.in</a></p>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2026
+       CareerChoice360. All rights reserved. | Designed for future leaders.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
